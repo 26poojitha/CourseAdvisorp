@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>All Colleges</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="recommend.html">Get Recommendation</a>
+      <a href="colleges.html">All Colleges</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>Colleges Database</h2>
+
+    <div class="filters">
+      <input id="college-search" placeholder="Search college or course..." oninput="renderAllColleges()">
+      <select id="college-state-filter" onchange="renderAllColleges()">
+        <option value="Any">Any State</option>
+        <option>Andhra Pradesh</option>
+        <option>Telangana</option>
+        <option>Karnataka</option>
+        <option>Tamil Nadu</option>
+      </select>
+    </div>
+
+    <div id="college-list"></div>
+  </main>
+
+  <!-- details popup (re-uses same markup) -->
+  <div id="college-popup" class="popup" style="display:none">
+    <div class="popup-content">
+      <button class="close" onclick="closeCollegePopup()">×</button>
+      <h3 id="cp-name"></h3>
+      <p id="cp-state"></p>
+      <p id="cp-desc"></p>
+      <p><b>Courses & Cutoffs:</b></p>
+      <ul id="cp-courses"></ul>
+      <p><b>Fees (per year):</b> <span id="cp-fees"></span></p>
+      <p><b>Placement Rate:</b> <span id="cp-placement"></span>%</p>
+      <a id="cp-link" href="#" target="_blank">Visit College Website</a>
+    </div>
+  </div>
+
+  <script src="colleges.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
